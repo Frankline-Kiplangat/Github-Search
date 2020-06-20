@@ -16,6 +16,11 @@ export class GithubService {
 
   getProfileDetails(){
     return this._http.get("api.github.com/users/" + this.username + "?user_Secret=")
-    // . (res =>res.json());
+    // .map(res =>res.json());
+  }
+
+  getProfileRepositories(){
+    return this._http.get("api.github.com/users/" + this.username + "/repositories?user_Secret=")
+    // .map(res =>res.json());
   }
 }
