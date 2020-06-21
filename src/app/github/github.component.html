@@ -1,6 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img src="/src/assets/images/icon.jpg" width="30px" height="30px">
   <a class="navbar-brand" routerLink="/Search"><b>GitHub Search~App</b></a>
-</nav>
+</nav><br>
+<div form-group>
+  <form>
+    <input type="text" name="search" placeholder="Search    GitHub User..">
+  </form>
+</div>
 <div class="container-fluid">
   <div *ngIf="profile">
     <div class="row">
@@ -16,7 +22,7 @@
       </div>
       <div class="row">
             <div class="panel">
-        <div class="col-md-6">
+        <div>
           <ul class='list-group'>
             <li class="list-group-item list-group-item-success" *ngIf="profile.bio">{{profile.bio}}</li>
             <li class="list-group-item list-group-item-success" *ngIf="profile.hireable">Available for hire{{profile.hireable}}</li>
