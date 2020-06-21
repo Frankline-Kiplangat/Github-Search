@@ -1,45 +1,44 @@
 <div class="container">
-    <div *ngIf="profile">
+  <div *ngIf="profile">
+    <div class="row">
+        <div class="col-sm-4"><br>
+      <img src="{{profile.avatar_url}}"  height="200px" width="200px" alt="Profile_image">
+    </div><br>
+  </div>
+    <div class="panel panel panel-default">
+      <div class="panel-heading">
+        <h5>{{profile.name}}</h5> ({{profile.login}})
+        <h5><span *ngIf="profile.company"> Works at {{profile.company}}</span></h5>
+        <h5>{{profile.location}} </h5>
+      </div>
       <div class="row">
-          <div class="col-sm-4"><br>
-        <img src="{{profile.avatar_url}}"  border-radius="50%" alt="Profile-picture">
+            <div class="panel-body">
+        <div class="text-center col-md-6">
+          <ul class='list-group'>
+            <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+            <li class="list-group-item" *ngIf="profile.hireable">Available for hire{{profile.hireable}}</li>
+            <li class="list-group-item" *ngIf="profile.twitter_username" >Twitter <a href="{{profile.twitter_username}}">{{profile.twitter_username}}</a></li>
+            <li class="list-group-item" *ngIf="profile.blog" ><a href="{{profile.blog}}">{{profile.blog}}</a></li>
+            <li class="list-group-item" *ngIf="profile.email"><a href="{{profile.email}}">{{profile.email}}</a></li>
+          </ul>
+        </div>
       </div><br>
     </div>
-      <div class="panel panel panel-default">
-        <div class="panel-heading">
-          <h5>{{profile.name}}</h5> ({{profile.login}})
-          <h5><span *ngIf="profile.company"> Works at {{profile.company}}</span></h5>
-          <h5>{{profile.location}} </h5>
-        </div>
-        <div class="row">
-              <div class="panel-body">
-          <div class="text-center col-md-6">
-            <ul class='list-group'>
-              <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
-              <li class="list-group-item" *ngIf="profile.hireable">Available for hire{{profile.hireable}}</li>
-              <li class="list-group-item" *ngIf="profile.twitter_username" >Twitter <a href="{{profile.twitter_username}}">{{profile.twitter_username}}</a></li>
-              <li class="list-group-item" *ngIf="profile.blog" ><a href="{{profile.blog}}">{{profile.blog}}</a></li>
-              <li class="list-group-item" *ngIf="profile.email"><a href="{{profile.email}}">{{profile.email}}</a></li>
-            </ul>
-          </div>
-        </div><br>
-      </div>
-          <div class="col-md-4 col-md-6">
-            <div class="row">
-              <p><br>
-                <span class="btn-success btn-lg">  {{ profile.followers }} Followers</span>
-                <span class="btn-info btn-lg"> Following {{ profile.following }}</span>
-                <span class="btn-primary btn-lg">Repositories {{ profile.public_repos }}</span>
-              </p>
-             <p><a href="{{profile.html_url}}" target="_blank"><button  class="btn-success btn-lg"  > View profile on github</button> </a></p>
-             <div class="panel panel-heading">
-              <div class="panel-heading">
-              <h3 class="panel-title"></h3>
-              </div>
-             </div>
+        <div class="col-md-4 col-md-6">
+          <div class="row">
+            <p><br>
+              <span class="btn-success btn-lg">  {{ profile.followers }} Followers</span>
+              <span class="btn-info btn-lg"> Following {{ profile.following }}</span>
+              <span class="btn-primary btn-lg">Repositories {{ profile.public_repos }}</span>
+            </p>
+           <p><a href="{{profile.html_url}}" target="_blank"><button  class="btn-success btn-lg"  > View profile on github</button> </a></p>
+           <div class="panel panel-heading">
+            <div class="panel-heading">
+            <h3 class="panel-title"></h3>
             </div>
+           </div>
           </div>
-      </div>
+        </div>
     </div>
-    </div>
-    
+  </div>
+  </div>
