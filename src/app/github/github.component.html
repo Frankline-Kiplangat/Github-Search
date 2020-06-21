@@ -1,10 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" heigh="8px">
   <img src="/src/assets/images/icon.jpg" width="30px" height="30px">
   <a class="navbar-brand" routerLink="/Search"><b>GitHub Search~App</b></a>
+ 
 </nav><br>
+
 <div form-group>
   <form>
-    <input type="text" name="search" placeholder="Search    GitHub User..">
+    <input type="text" name="search" class="fa fa-search" placeholder="Search    GitHub User..">
   </form>
 </div>
 <div class="container-fluid">
@@ -37,11 +39,11 @@
             <div>
               <br><br>
             <p>
-              <span class="btn btn-success"> Followers {{ profile.followers }} </span> 
-              <span class="btn btn-info"> Following {{ profile.following }}</span>
-              <span class="btn btn-danger"> Repositories {{ profile.public_repos }}</span>
+              <span class="btn btn-success"> Followers: {{ profile.followers }} </span> 
+              <span class="btn btn-info"> Following: {{ profile.following }}</span>
+              <span class="btn btn-danger"> Repositories: {{ profile.public_repos }}</span>
             </p>
-           <p><a href="{{profile.html_url}}" target="_blank"><button  class="btn btn-primary"  > View Profile on GitHub</button> </a></p>
+           <p><a href="{{profile.html_url}}" target="_blank"><button  class="btn btn-primary"> View Profile on GitHub</button> </a></p>
            <div class="panel-heading">
             <div class="panel-heading">
             <h2 class="panel-title"></h2>

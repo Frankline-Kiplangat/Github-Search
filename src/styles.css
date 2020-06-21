@@ -13,3 +13,26 @@ input[type=text] {
   input[type=text]:focus {
     width: 100%;
   }
+  .Profile_picture{
+      border-radius: 50%;
+  }
+  html{
+    background-image: url("/src/assets/images/github.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.green-background {
+    background-color: green;
+  }
+  
+  .yellow-background {
+    background-color: yellow;
+  }
+  
+  .red-background {
+    background-color: red;
+  }
+  .blue-background {
+    background-color: blue;
+  }
+  
