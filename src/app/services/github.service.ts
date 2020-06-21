@@ -1,26 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import 'rxjs/add/operator/map';
-
+import { HttpClient} from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
 export class GithubService {
-
-  private username : string;
-  private userSecret: "3ec48ad1adb73886d18c92705c8dc9cd782e8ac0";
-
-  constructor(private _http:HttpClient) { 
-    this.username= 'Frankline-Kiplangat';
+private username:string;
+private clientSecret ='809541c1141491a44f918d224d651dd01ae87a3a';
+  getGithubInfo: any;
+  constructor(private http:HttpClient){
+    console.log("service is now ready!");
+    this.username ='Frankline-Kiplangat';
   }
-
-  getProfileDetails(){
-    return this._http.get("api.github.com/users/" + this.username + "?user_Secret=")
-    // .map(res =>res.json());
+  getProfileInfo(){
+    return this.http.get("https://api.github.com/users/" + this.username)
   }
-
-  getProfileRepositories(){
-    return this._http.get("api.github.com/users/" + this.username + "/repositories?user_Secret=")
-    // .map(res =>res.json());
+    getProfileRepos(){
+      return this.http.get("https://api.github.com/users/" + this.username + "/repos?client_secret="+ this.clientSecret)
   }
 }

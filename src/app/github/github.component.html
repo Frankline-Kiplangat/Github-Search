@@ -1,50 +1,45 @@
-<div *ngIf="profile">
-    <div class="w3-panel w3-blue w3-round-xlarge">
-        <div class="w3-panel heading">
-            {{profile.name}} <large>{{profile.login}}</large>
-           <div class="panel-body">
-               <div class="row">
-                   <div class="col-sm-4">
-                       <img src="{{profile.avator_url}}" class="profile-picture"> 
-                   </div>
-                   <div class="list">
-                       <ul>
-                           <li *ngIf="profile.bio">{{profile.bio}}</li>
-                           <li *ngIf="profile.company">{{profile.company}}</li>
-                           <li *ngIf="profile.website"><a href="{{profile.website}}" target="_blank">{{profile.website}}</a></li>
-                           <li *ngIf="profile.twitter"><a href="{{profile.twitter}}" target="_blank">{{profile.twitter}}</a></li>
-                           <li *ngIf="profile.location">{{profile.location}}</li>
-                           <li *ngIf="profile.email"><a href="{{profile.email}}" target="_blank">{{profile.email}}</a></li>
-
-                       </ul>
-                   </div>
-                   <div class="card">
-                       <p>
-                           <span class="label label-default">{{profile.followers}} Followers</span>
-                           <span class="label label-success">{{profile.following}} Followings</span>
-                           <span class="label label-info">{{profile.public_gists}} public Gists</span>
-                           <span class="label label-primary">{{profile.public_repos}} Public Repositories</span>
-                           <span class="label label-primary">{{profile.followers}} Followers</span>
-                       </p>
-                       <div>
-                           <p><button><a href="{{profile.html_url}}" target="_blank" class="btn btn-danger"></a>View GitHub Profile</button></p>
-                       </div>
-                       <div class="panel-heading">
-                           <h1>Repositories</h1>
-                       </div>
-                       <div class="panel-body" *ngIf="let repository of repositories">
-                           <p>
-                             {{repository.name}} <a href ="{{repository.html_url}}" target="_blank" class="btn btn-primary">View More Details on GitHub</a>
-                           </p>
-                       </div>
-                       <div>
-                           <p>
-                               {{repository.description}}
-                           </p>
-                       </div>
-                   </div>
-               </div>
-           </div>
-        </div>
+<div class="container">
+    <div *ngIf="profile">
+      <div class="row">
+          <div class="col-sm-4"><br>
+        <img src="{{profile.avatar_url}}"  border-radius="50%" alt="Profile-picture">
+      </div><br>
     </div>
-</div> 
+      <div class="panel panel panel-default">
+        <div class="panel-heading">
+          <h5>{{profile.name}}</h5> ({{profile.login}})
+          <h5><span *ngIf="profile.company"> Works at {{profile.company}}</span></h5>
+          <h5>{{profile.location}} </h5>
+        </div>
+        <div class="row">
+              <div class="panel-body">
+          <div class="text-center col-md-6">
+            <ul class='list-group'>
+              <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+              <li class="list-group-item" *ngIf="profile.hireable">Available for hire{{profile.hireable}}</li>
+              <li class="list-group-item" *ngIf="profile.twitter_username" >Twitter <a href="{{profile.twitter_username}}">{{profile.twitter_username}}</a></li>
+              <li class="list-group-item" *ngIf="profile.blog" ><a href="{{profile.blog}}">{{profile.blog}}</a></li>
+              <li class="list-group-item" *ngIf="profile.email"><a href="{{profile.email}}">{{profile.email}}</a></li>
+            </ul>
+          </div>
+        </div><br>
+      </div>
+          <div class="col-md-4 col-md-6">
+            <div class="row">
+              <p><br>
+                <span class="btn-success btn-lg">  {{ profile.followers }} Followers</span>
+                <span class="btn-info btn-lg"> Following {{ profile.following }}</span>
+                <span class="btn-primary btn-lg">Repositories {{ profile.public_repos }}</span>
+              </p>
+             <p><a href="{{profile.html_url}}" target="_blank"><button  class="btn-success btn-lg"  > View profile on github</button> </a></p>
+             <div class="panel panel-heading">
+              <div class="panel-heading">
+              <h3 class="panel-title"></h3>
+              </div>
+             </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+    

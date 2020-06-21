@@ -13,17 +13,12 @@ repositories: any[];
 
 
   constructor(private githubService: GithubService) { 
-    this.githubService.getProfileDetails().subscribe((profile: any) => {
+    this.githubService.getProfileInfo().subscribe((profile: any) => {
       console.log(profile);
       this.profile = profile;
     });
 
-    this.githubService.getProfileRepositories().subscribe (repositories =>{
-      console.log(repositories);
-      // this.repositories= repositories;
 
-
-    })
   }
 
   ngOnInit() {
