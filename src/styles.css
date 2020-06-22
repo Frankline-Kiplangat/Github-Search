@@ -37,4 +37,6 @@ input[type=text] {
   .blue-background {
     background-color: blue;
   }
-  
+  .form-group{
+      padding-top: 20px;
+  }

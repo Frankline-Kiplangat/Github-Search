@@ -7,6 +7,7 @@ import { GithubService } from './services/github.service';
 import { GithubComponent } from './github/github.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GithubFormComponent } from './github-form/github-form.component';
+import { FormsModule } from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { GithubFormComponent } from './github-form/github-form.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [GithubService],
   bootstrap: [AppComponent]

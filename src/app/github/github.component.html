@@ -18,11 +18,11 @@
             <div class="panel">
         <div>
           <ul class='list-group'>
-            <li class="list-group-item list-group-item-success" *ngIf="profile.bio">{{profile.bio}}</li>
-            <li class="list-group-item list-group-item-success" *ngIf="profile.hireable">Available for hire{{profile.hireable}}</li>
-            <li class="list-group-item list-group-item-success" *ngIf="profile.twitter_username" >Twitter <a href="{{profile.twitter_username}}">{{profile.twitter_username}}</a></li>
-            <li class="list-group-item list-group-item-success" *ngIf="profile.blog" ><a href="{{profile.blog}}">{{profile.blog}}</a></li>
-            <li class="list-group-item list-group-item-success" *ngIf="profile.email"><a href="{{profile.email}}">{{profile.email}}</a></li>
+            <li class="list-group-item list-group-item-success" *ngIf="profile.bio">Bio: {{profile.bio}}</li>
+            <li class="list-group-item list-group-item-success" *ngIf="profile.hireable">Available for hire: {{profile.hireable}}</li>
+            <li class="list-group-item list-group-item-success" *ngIf="profile.twitter_username" >Twitter🔵 : <a href="{{profile.twitter_username}}">{{profile.twitter_username}}</a></li>
+            <li class="list-group-item list-group-item-success" *ngIf="profile.blog" ><a href="{{profile.blog}}">Blog: {{profile.blog}}</a></li>
+            <li class="list-group-item list-group-item-success" *ngIf="profile.email"><a href="{{profile.email}}">Email: {{profile.email}}</a></li>
           </ul>
         </div>
       </div><br>
@@ -33,15 +33,25 @@
             <p>
               <span class="btn btn-success"> Followers: {{ profile.followers }} </span> 
               <span class="btn btn-info"> Following: {{ profile.following }}</span>
+              <span class="btn btn-primary"> Public gists:  {{ profile.public_gists}}</span>
               <span class="btn btn-danger"> Repositories: {{ profile.public_repos }}</span>
             </p>
+            <div class="git_profile">
            <p><a href="{{profile.html_url}}" target="_blank"><button  class="btn btn-primary"> View Profile on GitHub</button> </a></p>
-           <div class="panel-heading">
-            <div class="panel-heading">
-            <h2 class="panel-title"></h2>
-            </div>
+           <div class="panel panel-default">
+             <div class="panel panel-heading">
+               <h4 class="panel-tittle">Repositories</h4>
+             </div>
+             <div class="panel-body" *ngFor="let repo of repos">
+               <p class="clearfix">
+                 {{repo.name}} <a href="{{repo.html_url}}" class="btn btn-danger" target="_blank">View this Repository on GitHub</a>
+               </p>
+               <p>{{repo.description}}</p>
+             </div>
+           </div>
            </div>
           </div>
+        </div>
         </div>
     </div>
   </div>
