@@ -52,7 +52,18 @@ font-size: xx-large;
 font-weight: bold;
 float: left;
 }
+.profile{
+  text-align: center;
+  background-color: rgb(193, 209, 240);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
+.col-sm-5{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
