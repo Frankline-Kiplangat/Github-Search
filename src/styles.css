@@ -1,3 +1,4 @@
+
 input[type=text] {
     width: 130px;
     box-sizing: border-box;
@@ -10,6 +11,11 @@ input[type=text] {
     transition: width 0.4s ease-in-out;
   }
   
+.git-details{
+  word-spacing: 3px;
+}
+
+
   input[type=text]:focus {
     width: 100%;
   }
@@ -18,11 +24,7 @@ input[type=text] {
       width: 250px;
       border-radius: 50%;
   }
-  html{
-    background-image: url("/src/assets/images/github.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 .green-background {
     background-color: green;
   }
@@ -38,5 +40,26 @@ input[type=text] {
     background-color: blue;
   }
   .form-group{
-      padding-top: 20px;
+      padding-top: 20px;  
   }
+
+.panel{
+  columns: 2;
+}
+h4{
+color: blue;
+font-size: xx-large;
+font-weight: bold;
+float: left;
+}
+
+
+
+
+
+
+
+
+
+
+  @import "~bootstrap/dist/css/bootstrap.css"

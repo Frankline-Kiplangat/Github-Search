@@ -1,3 +1,15 @@
+<div class="form-group">
+  <form>
+    <input type="text" name="search" class="fa fa-search" placeholder="Search    GitHub User..."
+    [(ngModel)]="username" name="username" (keyup)="getProfile()">
+  </form>
+  <!-- <form action="" class="search-form">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search git users with username" [(ngModel)]="username" name="username" (keyup)="getProfile()">
+    </div>
+  </form> -->
+
+
 <div>
   <app-github-form></app-github-form>
 </div>
@@ -14,8 +26,7 @@
         <h2><span *ngIf="profile.company"> Works at {{profile.company}}</span></h2>
         <h2>{{profile.location}} </h2>
       </div>
-      <div class="row">
-            <div class="panel">
+        <div class="panel">
         <div>
           <ul class='list-group'>
             <li class="list-group-item list-group-item-success" *ngIf="profile.bio">Bio: {{profile.bio}}</li>
@@ -30,10 +41,13 @@
         <div class="col-md-6">
             <div>
               <br><br>
-            <p>
+            <p class="git-details">
               <span class="btn btn-success"> Followers: {{ profile.followers }} </span> 
+
               <span class="btn btn-info"> Following: {{ profile.following }}</span>
+
               <span class="btn btn-primary"> Public gists:  {{ profile.public_gists}}</span>
+
               <span class="btn btn-danger"> Repositories: {{ profile.public_repos }}</span>
             </p>
             <div class="git_profile">
@@ -42,6 +56,7 @@
              <div class="panel panel-heading">
                <h4 class="panel-tittle">Repositories</h4>
              </div>
+             <br>
              <div class="panel-body" *ngFor="let repo of repos">
                <p class="clearfix">
                  {{repo.name}} <a href="{{repo.html_url}}" class="btn btn-danger" target="_blank">View this Repository on GitHub</a>
@@ -54,4 +69,3 @@
         </div>
         </div>
     </div>
-  </div>

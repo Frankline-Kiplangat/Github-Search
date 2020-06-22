@@ -12,23 +12,26 @@ repos: any;
 username: string;
 
 constructor(private githubService:GithubService) {
-
-}
-
- getProfile(){
-   this.githubService.updateProfile(this.username);
-   this.githubService.getProfileInfo().subscribe(profile=> {
+  
+  this.githubService.getProfileInfo().subscribe(profile=> {
     console.log(profile);
     this.profile = profile;
   });
+
   this.githubService.getProfileRepos().subscribe(repos =>{
     console.log(repos);
     this.repos = repos;
   }) 
+}
+  getProfile(){
+    this.githubService.updateProfile(this.username);
+    
+  }
 
- }
 
-ngOnInit()  {
+
+ngOnInit(): void {
 }
 }
+
 

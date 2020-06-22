@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { HttpClient } from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
 export class GithubService {
+  
 private username:string;
 private clientId='e51f1b43ea2f3bdd266c';
 private clientSecret ='eb259cfd44fa48f477f4b743647832811217805b';
 getGithubInfo: any;
+
   constructor(private http:HttpClient){
     console.log("service is now ready!");
     this.username ='Frankline-Kiplangat';
