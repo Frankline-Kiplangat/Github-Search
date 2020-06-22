@@ -7,13 +7,17 @@ import { GithubService } from './services/github.service';
 import { GithubComponent } from './github/github.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { GithubFormComponent } from './github-form/github-form.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AboutComponent } from './about/about.component'
 @NgModule({
   declarations: [
     AppComponent,
     GithubComponent,
     NavbarComponent,
     GithubFormComponent,
+    NotFoundComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
