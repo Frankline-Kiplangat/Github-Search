@@ -18,7 +18,7 @@ To view this page, use the link: https://frankline-kiplangat.github.io/Github-Se
 # Installation Requirements
 
 * Open Terminal on your computer and create a folder. 
-* Clone or download and unzip the repository from github: https://github.com/Frankline-Kiplangat/Quotes-App.git
+* Clone or download and unzip the repository from github: https://github.com/Frankline-Kiplangat/Github-Search
 * Open it on a text editor
 * Contribute and save your changes.
 * Run ng serve from your terminal 

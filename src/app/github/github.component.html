@@ -1,26 +1,24 @@
 <div class="form-group">
   <form>
-    <input type="text" name="search" class="fa fa-search" placeholder="Search    GitHub User..."
-    [(ngModel)]="username" name="username" (keyup)="getProfile()">
+    <input type="text" name="search" class="search-box" placeholder="Search    GitHub User..."
+    [(ngModel)]="username" name="username" (keypress)="getProfile()">
   </form>
 </div>
 <div class="user-profile">
-<div class="container-fluid">
   <div *ngIf="profile">
     <div class="row">
         <div class="col-sm-5"><br>
       <img src="{{profile.avatar_url}}"  class="Profile_picture">
     </div>
   </div>
-    <div class="panel-default">
-      <div class="panel-tittle">
+  </div>
+    <div>
         <h2>{{profile.name}}</h2> ({{profile.login}})
         <h2><span *ngIf="profile.company"> Currently Working at {{profile.company}}</span></h2>
         <h2>{{profile.location}} </h2>
       </div>
-        <div class="panel">
-        <div>
-          <ul class='list'>
+        <div class="list">
+          <ul>
             <li class="list-group-item list-group-item-success" *ngIf="profile.bio">Bio: {{profile.bio}}</li>
             <li class="list-group-item list-group-item-success" *ngIf="profile.hireable">Available for hire: {{profile.hireable}}</li>
             <li class="list-group-item list-group-item-success" *ngIf="profile.twitter_username" >Twitter🔵 : <a href="{{profile.twitter_username}}">{{profile.twitter_username}}</a></li>
@@ -29,36 +27,35 @@
           </ul>
         </div>
       </div><br>
-    </div>
+   
         <div class="col-md-6">
             <div>
               <br><br>
-            <p class="git-details">
+            <p>
               <span class="btn btn-success"> Followers: {{ profile.followers }} </span> 
 
               <span class="btn btn-info"> Following: {{ profile.following }}</span>
 
-              <span class="btn btn-primary"> Public gists:  {{ profile.public_gists}}</span>
+              <span class="btn btn-primary"> Public-gists:  {{ profile.public_gists}}</span>
 
               <span class="btn btn-danger"> Repositories: {{ profile.public_repos }}</span>
             </p>
-            <div class="git_profile">
+            <div>
            <p><a href="{{profile.html_url}}" target="_blank"><button  class="btn btn-primary"> View Profile on GitHub</button> </a></p>
            
-           <div class="panel panel-default">
-             <div class="panel panel-heading">
-               <h4 class="panel panel-tittle">Repositories</h4>
+             <div class="heading">
+               <h4><b>Repositories</b></h4>
              </div>
              <br>
-             <div class="panel panel-body" *ngFor="let repo of repos">
-               <p class="clearfix">
-                 {{repo.name}} <a href="{{repo.html_url}}" class="btn btn-danger" target="_blank">View this Repository on GitHub</a>
+             <div *ngFor="let repo of repos">
+               <div class="row">
+                 <div class="column">
+               <p>
+                 {{repo.name}} <a href="{{repo.html_url}}" class="btn btn-danger" target="_blank">View the Repo on GitHub</a>
                </p>
+             </div>
              </div>
            </div>
            </div>
           </div>
-        </div>
-        </div>
-    </div>
-    </div>
+          </div>

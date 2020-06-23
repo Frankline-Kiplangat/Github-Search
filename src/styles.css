@@ -43,14 +43,11 @@ input[type=text] {
       padding-top: 20px;  
   }
 
-.panel{
-  columns: 2;
-}
 h4{
 color: blue;
 font-size: xx-large;
 font-weight: bold;
-float: left;
+
 }
 .user-profile{
   text-align: center;
@@ -68,11 +65,31 @@ float: left;
   color: darkgray;
 
 }
+.panel_body{
+  float: left;
+  padding: 5px;
+  width: 33.33%;
+  display: flex;
+}
+.list{
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row{
+  display: flex;
+  margin-right: 50px;
 
-
-
-
-
+}
+.column{
+  float: left;
+  padding: 5px;
+  width: 33.33%;
+  margin: auto;
+  column-count: auto;
+  display: flex;
+}
 
 
 
