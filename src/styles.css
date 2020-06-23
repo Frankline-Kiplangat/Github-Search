@@ -12,7 +12,7 @@ input[type=text] {
   }
   
 .git-details{
-  word-spacing: 3px;
+  word-spacing: 5px;
 }
 
 
@@ -52,7 +52,7 @@ font-size: xx-large;
 font-weight: bold;
 float: left;
 }
-.profile{
+.user-profile{
   text-align: center;
   background-color: rgb(193, 209, 240);
   background-repeat: no-repeat;

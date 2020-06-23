@@ -24,7 +24,7 @@ constructor(private githubService:GithubService) {
     });
 
 }
-  findProfile(){
+  getProfile(){
     this.githubService.updateProfile(this.username);
     this.githubService.getProfileInformation().subscribe(profile => {
       console.log(profile);
