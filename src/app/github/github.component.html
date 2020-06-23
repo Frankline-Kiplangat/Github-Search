@@ -1,7 +1,7 @@
 <div class="form-group">
   <form>
     <input type="text" name="search" class="fa fa-search" placeholder="Search    GitHub User..."
-    [(ngModel)]="username" name="username" (keyup)="getProfile()">
+    [(ngModel)]="username" name="username" (keyup)="findProfile()">
   </form>
 </div>
 <div class="profile">
@@ -24,8 +24,8 @@
             <li class="list-group-item list-group-item-success" *ngIf="profile.bio">Bio: {{profile.bio}}</li>
             <li class="list-group-item list-group-item-success" *ngIf="profile.hireable">Available for hire: {{profile.hireable}}</li>
             <li class="list-group-item list-group-item-success" *ngIf="profile.twitter_username" >Twitter🔵 : <a href="{{profile.twitter_username}}">{{profile.twitter_username}}</a></li>
-            <li class="list-group-item list-group-item-success" *ngIf="profile.blog" ><a href="{{profile.blog}}">Blog: {{profile.blog}}</a></li>
-            <li class="list-group-item list-group-item-success" *ngIf="profile.email"><a href="{{profile.email}}">Email: {{profile.email}}</a></li>
+            <li class="list-group-item list-group-item-success" *ngIf="profile.blog" ><a href="{{profile.blog}}">{{profile.blog}}</a></li>
+            <li class="list-group-item list-group-item-success" *ngIf="profile.email"><a href="{{profile.email}}">{{profile.email}}</a></li>
           </ul>
         </div>
       </div><br>

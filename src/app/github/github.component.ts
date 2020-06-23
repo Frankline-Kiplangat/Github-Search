@@ -12,20 +12,33 @@ repos: any;
 username: string;
 
 constructor(private githubService:GithubService) {
-  this.githubService.getProfileInfo().subscribe(profile => {
-    console.log(profile);
-    this.profile = profile;
-  });
+  this.githubService.updateProfile(this.username);
+    this.githubService.getProfileInformation().subscribe(profile => {
+      console.log(profile);
+      this.profile = profile;
+    });
+  
+    this.githubService.getProfileRepos().subscribe(repos =>{
+      console.log(repos);
+      this.repos = repos;
+    });
 
-  this.githubService.getProfileRepos().subscribe(repos =>{
-    console.log(repos);
-    this.repos = repos;
-  })
 }
-  getProfile(){
+  findProfile(){
     this.githubService.updateProfile(this.username);
+    this.githubService.getProfileInformation().subscribe(profile => {
+      console.log(profile);
+      this.profile = profile;
+    });
+  
+    this.githubService.getProfileRepos().subscribe(repos =>{
+      this.repos = repos;
+    });
   }
 
-ngOnInit(): void {
+ngOnInit() {
+  this.githubService.updateProfile('Frankline-Kiplangat');
+  this.githubService.getProfileInformation().subscribe(profile => this.profile = profile);
+  this.githubService.getProfileRepos().subscribe(repos=> this.repos = repos);
 }
 }

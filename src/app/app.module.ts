@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { GithubService } from './services/github.service';
 import { GithubComponent } from './github/github.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { GithubFormComponent } from './github-form/github-form.component';
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -15,7 +14,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppComponent,
     GithubComponent,
     NavbarComponent,
-    GithubFormComponent,
     AboutComponent,
     NotFoundComponent,
   ],
