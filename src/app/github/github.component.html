@@ -1,22 +1,22 @@
 <div class="form-group">
   <form>
     <input type="text" name="search" class="search-box" placeholder="Search    GitHub User..."
-    [(ngModel)]="username" name="username" (keypress)="getProfile()">
+    [(ngModel)]="username" name="username" (keypress)="getUserProfile()">
   </form>
 </div>
 <div class="user-profile">
   <div *ngIf="profile">
     <div class="row">
         <div class="col-sm-5"><br>
-      <img src="{{profile.avatar_url}}"  class="Profile_picture">
+      <img src="{{profile.avatar_url}}"  class="Profile_picture" alt="img1">
     </div>
   </div>
   </div>
     <div>
-        <h2>{{profile.name}}</h2> ({{profile.login}})
-        <h2><span *ngIf="profile.company"> Currently Working at {{profile.company}}</span></h2>
-        <h2>{{profile.location}} </h2>
-      </div>
+        <h2>Name: {{profile.name}}</h2> ({{profile.login}})
+        <h2> <span *ngIf="profile.company">Company: {{profile.company}}</span></h2>
+        <h2>Location: {{profile.location}} </h2>
+      </div> 
         <div class="list">
           <ul>
             <li class="list-group-item list-group-item-success" *ngIf="profile.bio">Bio: {{profile.bio}}</li>

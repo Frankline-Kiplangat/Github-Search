@@ -91,7 +91,9 @@ font-weight: bold;
   display: flex;
 }
 
-
+.col-sm-6{
+  margin-right: 5px;
+}
 
 
   @import "~bootstrap/dist/css/bootstrap.css"

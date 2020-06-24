@@ -10,10 +10,7 @@ import { environment } from 'src/environments/environment';
 export class GithubService {
   
 private username:string;
-getGithubInfo: any;
-
   constructor(private http:HttpClient){
-    console.log("service works!");
     this.username ='Frankline-Kiplangat';
   }
   getProfileInformation(){
@@ -22,9 +19,7 @@ getGithubInfo: any;
   getProfileRepos(){
     return this.http.get(`https://api.github.com/users/${this.username}/repos?access_token=${environment.apiKey}`)
   }
-  updateProfile(username:string){
-    this.username = username
-
-
+  updateUserProfile(username:string){
+    this.username = username;
   }
 }
