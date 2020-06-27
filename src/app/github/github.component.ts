@@ -35,5 +35,9 @@ constructor(private githubService:GithubService) {
   }
 
 ngOnInit() {
+  this.githubService.updateUserProfile('Frankline-Kiplangat');
+  this.githubService.getProfileInformation().subscribe(profile => this.profile = profile);
+  // this.githubService.getProfileRepos().subscribe(repos =>  this.repos = repos);
+
 }
 }
